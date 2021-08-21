@@ -10,8 +10,13 @@ cont = ('zero', 'um', 'dois', 'três', 'quatro',
         'quinze', 'dezesseis', 'dezessete', 'dezoito',
         'dezenove', 'vinte')
 while True:
-    num = int(input('Digite um número entre 0 e 20: '))
-    if 0 <= num <= 20:
+    while True:
+        num = int(input('Digite um número entre 0 e 20: '))
+        if 0 <= num <= 20:
+            break
+        print('Tente novamente. ', end='')
+    print(f'Você digitou o número {cont[num]}')
+    opc = str(input('Deseja continuar? [S/N]')).strip().upper()[0]
+    if opc == 'N':
         break
-    print('Tente novamente. ', end='')
-print(f'Você digitou o número {cont[num]}')
+print('***** Obrigado e volte sempre! *****')
